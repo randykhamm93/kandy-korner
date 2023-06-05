@@ -1,0 +1,11 @@
+.locations {
+  display: flex;
+  flex-direction: column;
+}
+
+.location {
+  background-color: skyblue;
+  border: 1.5px solid crimson;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+}

@@ -1,0 +1,48 @@
+.products {
+  display: flex;
+  flex-direction: column;
+}
+
+.product {
+  background-color: skyblue;
+  border: 1.5px solid crimson;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+}
+
+#show-all-button {
+  background-color: skyblue;
+  border: 1.5px solid crimson;
+  margin-right: 5px; 
+}
+
+#top-priced-button {
+  background-color: skyblue;
+  border: 1.5px solid crimson;
+  margin: 5px;
+}
+
+#create-product-button {
+  background-color: skyblue;
+  border: 1.5px solid crimson;
+  margin: 5px;
+}
+
+#productName {
+  background-color: skyblue;
+  border: 1.5px solid crimson;
+  margin: 5px;
+}
+
+#productType {
+  background-color: skyblue;
+  border: 1.5px solid crimson;
+  margin: 5px;
+  padding: 3px;
+}
+
+#price {
+  background-color: skyblue;
+  border: 1.5px solid crimson;
+  margin: 5px;
+}
