@@ -1,14 +1,18 @@
 body {
     background-color:aliceblue;
 }
-.h1, h1 {
-    text-shadow: 1px 1px 1px crimson;
+h1 {
+    text-shadow: 1px 1px 1px black;
     font-size: 2.5rem;
     color:skyblue;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkt1X6ADOawh0wd_L4jRaOTdIU6uP-wCksvg&usqp=CAU);
+    padding-top: 80px;
+    text-align: center;
 }
 
 h2 {
     color: crimson;
+    text-align: center;
 }
 
 fieldset {
@@ -21,13 +25,16 @@ fieldset {
 .form--login {
     display: inline-block;
     margin: 0 auto;
-    text-align: left;
 }
 
 .form--login > fieldset > input[type="email"] {
-    width: 25em;
-    border: 1.5px solid crimson;
+        width: 25em;
+        border: 1.5px solid crimson;
+        align-content: center;
+        margin: 0 auto; /* Add this line to center the element */
 }
+      
+
 
 .label--login {
     width: 8rem;

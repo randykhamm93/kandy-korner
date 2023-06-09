@@ -46,3 +46,14 @@
   border: 1.5px solid crimson;
   margin: 5px;
 }
+
+.candy_input_field {
+  display: block;
+  margin : 0 auto;
+  text-align: center;
+  min-width: 0;
+  padding: .5rem .1rem;
+  border: 0;
+  background-color: skyblue;
+  border: 1.5px solid crimson;
+}

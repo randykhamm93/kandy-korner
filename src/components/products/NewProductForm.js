@@ -6,20 +6,20 @@ export const NewProductForm = () => {
     productName: '',
     productType: '',
     price: 0
-  });
+  })
   const [productTypes, setProductTypes] = useState([]);
 
   useEffect(() => {
     fetch('http://localhost:8088/productTypes')
       .then(response => response.json())
-      .then(data => setProductTypes(data));
-  }, []);
+      .then(data => setProductTypes(data))
+  }, [])
 
   
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault()
 
     
     const newProductAPI = {
@@ -27,7 +27,7 @@ export const NewProductForm = () => {
       name: product.productName,
       productTypeId: product.productType.id,
       pricePerUnit: product.price
-    };
+    }
   
     return fetch('http://localhost:8088/products?_expand=productType&_sort=name', {
       method: 'POST',
@@ -38,36 +38,36 @@ export const NewProductForm = () => {
     })
       .then(response => response.json())
       .then((createdProduct) => {
-        const { id, name, productTypeId, pricePerUnit } = createdProduct;
+        const { id, name, productTypeId, pricePerUnit } = createdProduct
         const updatedProduct = {
           id,
           name,
           productTypeId,
           pricePerUnit
-        };
-        console.log(updatedProduct); // Verify the updated product structure
-        navigate('/products');
-      });
-  };
+        }
+        console.log(updatedProduct) // Verify the updated product structure
+        navigate('/products')
+      })
+  }
 
 
   const handleProductNameChange = (event) => {
     updateProduct(prevProduct => ({
       ...prevProduct,
       productName: event.target.value
-    }));
-  };
+    }))
+  }
 
 
   const handleProductTypeChange = (event) => {
-    const selectedProductTypeId = parseInt(event.target.value);
-    const selectedProductType = productTypes.find(type => type.id === selectedProductTypeId);
+    const selectedProductTypeId = parseInt(event.target.value)
+    const selectedProductType = productTypes.find(type => type.id === selectedProductTypeId)
   
     updateProduct(prevProduct => ({
       ...prevProduct,
       productType: selectedProductType
-    }));
-  };
+    }))
+  }
   
 
   const handlePriceChange = (event) => {
@@ -77,15 +77,15 @@ export const NewProductForm = () => {
       updateProduct(prevProduct => ({
         ...prevProduct,
         price: ''
-      }));
+      }))
     } else {
       const parsedPrice = parseFloat(inputValue);
       updateProduct(prevProduct => ({
         ...prevProduct,
         price: isNaN(parsedPrice) ? '' : parsedPrice
-      }));
+      }))
     }
-  };
+  }
 
   return (
     <form onSubmit={handleSubmit}>
@@ -94,7 +94,7 @@ export const NewProductForm = () => {
       <input
         type="text"
         id="productName"
-        autocomplete="off"
+        autoComplete="off"
         value={product.productName}
         onChange={handleProductNameChange}
         required
@@ -114,6 +114,7 @@ export const NewProductForm = () => {
     </option>
   ))}
 </select>
+
       <label htmlFor="price">Price: </label>
       <input
         type="number"
@@ -126,5 +127,5 @@ export const NewProductForm = () => {
 
       <button id="create-product-button" type="submit">Create Product</button>
     </form>
-  );
-};
+  )
+}
